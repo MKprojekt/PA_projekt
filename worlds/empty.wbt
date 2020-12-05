@@ -3,8 +3,8 @@ WorldInfo {
   coordinateSystem "NUE"
 }
 Viewpoint {
-  orientation -0.01773024960030544 0.9954510788460333 0.09360976377162368 2.9686550282209985
-  position 0.04387964667500981 0.15368546514043446 -0.45312266649018434
+  orientation -0.18640975637503987 -0.9648146521018695 -0.18542947397257714 1.653052257210019
+  position -0.5311911722730885 0.2631877616785859 0.09946248311065677
 }
 TexturedBackgroundLight {
 }
@@ -14,12 +14,20 @@ RectangleArena {
 }
 TinkerbotsBase {
   translation 0 0.03 0
+  controller "Mr_controller"
   upSlot TinkerbotsCube {
+    upSlot TinkerbotsCube {
+      name "front_cube"
+      frontSlot TinkerbotsDistanceSensor {
+        rotation 0 0 1 3.141592653589793
+        name "distance_sensor"
+      }
+    }
     leftSlot TinkerbotsCube {
       rightSlot TinkerbotsMotor {
-        rotation 0 0 1 -1.5707996938995747
+        rotation 0 0 1 1.5707996938995747
         name "motor_left"
-        frontSlot TinkerbotsAxle {
+        backSlot TinkerbotsAxle {
           endSlot TinkerbotsWheel {
           }
         }
@@ -41,4 +49,10 @@ TinkerbotsBase {
   downCSlot TinkerbotsFinger {
     rotation 0 0 1 1.5708003061004252
   }
+  extensionSlot [
+    HokuyoUrg04lx {
+      translation 0 0.07 0
+      name "lidar"
+    }
+  ]
 }
