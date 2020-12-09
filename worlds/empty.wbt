@@ -3,8 +3,8 @@ WorldInfo {
   coordinateSystem "NUE"
 }
 Viewpoint {
-  orientation -0.18640975637503987 -0.9648146521018695 -0.18542947397257714 1.653052257210019
-  position -0.5311911722730885 0.2631877616785859 0.09946248311065677
+  orientation -0.7461794322099539 -0.6290501215551424 -0.21797293299465267 0.912587453998979
+  position -0.25831327721219033 0.39485205529623946 0.40569739774827335
 }
 TexturedBackgroundLight {
 }
@@ -37,6 +37,9 @@ TinkerbotsBase {
       leftSlot TinkerbotsMotor {
         rotation 0 0 1 1.5707996938995747
         name "motor_right"
+        leftSlot TinkerbotsDistanceSensor {
+          name "DS2"
+        }
         frontSlot TinkerbotsAxle {
           endSlot TinkerbotsWheel {
           }
@@ -49,10 +52,4 @@ TinkerbotsBase {
   downCSlot TinkerbotsFinger {
     rotation 0 0 1 1.5708003061004252
   }
-  extensionSlot [
-    HokuyoUrg04lx {
-      translation 0 0.07 0
-      name "lidar"
-    }
-  ]
 }
