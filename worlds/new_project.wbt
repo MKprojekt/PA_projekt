@@ -3,12 +3,8 @@ WorldInfo {
   coordinateSystem "NUE"
 }
 Viewpoint {
-  orientation 0.33032952146634165 -0.8756305724951886 -0.35235423618791045 4.533709594462979
-  position 0.590059143647729 0.6252172939281733 0.24035171053716872
-}
-DEF ball1 Ball {
-  translation 0 0.0825 0.36
-  radius 0.06
+  orientation 0.07041756447852035 0.9356369459675177 0.34586828700169914 3.500487514714633
+  position -0.11276547746558088 0.26298164766601545 -0.219161758655521
 }
 TexturedBackground {
 }
@@ -20,17 +16,13 @@ RectangleArena {
 }
 TinkerbotsBase {
   translation 0 0.05 0
-  controller "Mr_controller_v2"
   upSlot TinkerbotsMotor {
-    rotation 0 0 1 1.5707996938995747
+    rotation 0 0 1 -1.5708003061004252
     name "motor_left"
-    leftSlot TinkerbotsDistanceSensor {
-      rotation 0 0 1 1.5707996938995747
-      name "DS_left"
-    }
-    backSlot TinkerbotsAxle {
+    frontSlot TinkerbotsAxle {
       name "axle_left"
-      endSlot DEF wheel_left TinkerbotsWheel {
+      endSlot TinkerbotsWheel {
+        name "wheel_left"
       }
     }
   }
@@ -43,10 +35,6 @@ TinkerbotsBase {
     leftSlot TinkerbotsMotor {
       rotation 0 0 1 1.5708003061004252
       name "motor_right"
-      leftSlot TinkerbotsDistanceSensor {
-        rotation 0 0 1 1.5707996938995747
-        name "DS_right"
-      }
       frontSlot TinkerbotsAxle {
         name "axle_right"
         endSlot TinkerbotsWheel {
