@@ -12,7 +12,7 @@
 
 TIME_STEP = 64;
 
-speed = 4;
+speed = 6;
 
 % get and enable devices, e.g.:
 %  camera = wb_robot_get_device('camera');
@@ -44,8 +44,8 @@ while wb_robot_step(TIME_STEP) ~= -1
   DS_right_value = wb_distance_sensor_get_value(DS_right);
   
   %detect obstacle
-  obstacle_left = DS_left_value < 30;
-  obstacle_right = DS_right_value < 30;
+  obstacle_left = DS_left_value < 35;
+  obstacle_right = DS_right_value < 35;
   
   %set motor speed
   left_motor_speed = speed*0.5;
