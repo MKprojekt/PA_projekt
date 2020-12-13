@@ -1,5 +1,5 @@
 % MATLAB controller for Webots
-% File:          Mr_controller.m
+% File:          Mr_controller_v2.m
 % Date:
 % Description:
 % Author:
@@ -12,45 +12,59 @@
 
 TIME_STEP = 64;
 
+speed = 4;
+
 % get and enable devices, e.g.:
 %  camera = wb_robot_get_device('camera');
 %  wb_camera_enable(camera, TIME_STEP);
+%  motor = wb_robot_get_device('motor');
 
-%GET DEVICE
+%initialize motors
 motor_left = wb_robot_get_device('motor_left');
 motor_right = wb_robot_get_device('motor_right');
-
-DS = wb_robot_get_device('distance_sensor');
-
-%SET
 wb_motor_set_position(motor_left, inf);
-wb_motor_set_velocity(motor_left, 3);
 wb_motor_set_position(motor_right, inf);
-wb_motor_set_velocity(motor_right, 3);
+wb_motor_set_velocity(motor_left, 0);
+wb_motor_set_velocity(motor_right, 0);
 
-%ENABLE
-wb_distance_sensor_enable(DS, TIME_STEP);
-
-%GET
+%initialize distance sensors
+DS_left = wb_robot_get_device('DS_left');
+DS_right = wb_robot_get_device('DS_right');
+wb_distance_sensor_enable(DS_left,TIME_STEP);
+wb_distance_sensor_enable(DS_right,TIME_STEP);
 
 % main loop:
 % perform simulation steps of TIME_STEP milliseconds
 % and leave the loop when Webots signals the termination
 %
-
 while wb_robot_step(TIME_STEP) ~= -1
 
-distance = wb_distance_sensor_get_value(DS);
-
-if distance < 100
-wb_motor_set_position(motor_right, -3);
-wb_motor_set_position(motor_left, 3);
-end
-
-
-  % read the sensors, e.g.:
-  %  rgb = wb_camera_get_image(camera);
+  % read the sensors
+  DS_left_value = wb_distance_sensor_get_value(DS_left);
+  DS_right_value = wb_distance_sensor_get_value(DS_right);
   
+  %detect obstacle
+  obstacle_left = DS_left_value < 30;
+  obstacle_right = DS_right_value < 30;
+  
+  %set motor speed
+  left_motor_speed = speed*0.5;
+  right_motor_speed = speed*0.5;
+  
+  %change motor speed near obstacle
+  if obstacle_left
+    left_motor_speed = speed*0.5;
+    right_motor_speed = -speed*0.5;
+  elseif obstacle_right
+    left_motor_speed = -speed*0.5;
+    right_motor_speed = speed*0.5;
+  end
+  
+  %set motor speed
+  wb_motor_set_velocity(motor_left, left_motor_speed);
+  wb_motor_set_velocity(motor_right, right_motor_speed);
+  
+  %  rgb = wb_camera_get_image(camera);
 
   % Process here sensor data, images, etc.
 
