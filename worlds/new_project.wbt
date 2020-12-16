@@ -3,8 +3,8 @@ WorldInfo {
   coordinateSystem "NUE"
 }
 Viewpoint {
-  orientation -0.1960533816122672 -0.9095191397969318 -0.3665214944603439 2.252556683706834
-  position -0.6338021497356612 0.7446424886023091 -1.0190339509164785
+  orientation 0.5522504678851193 0.6203026815584385 0.5569955152172028 4.233473762770593
+  position -0.21125056206123632 0.8000653062897216 -0.6236647287782707
 }
 DEF ball1 Ball {
   translation 0.03 0.0825 0.36
@@ -19,11 +19,32 @@ RectangleArena {
   floorSize 2 2
 }
 TinkerbotsBase {
-  translation -0.1 0.05 -0.9
+  translation -0.11 0.05 -0.9
   controller "Mr_controller"
   upSlot TinkerbotsMotor {
     rotation 0 0 1 1.5708003061004252
     name "motor_left"
+    upSlot TinkerbotsMotor {
+      translation 0 0.04 -0.04
+      name "motor_right"
+      upSlot TinkerbotsDistanceSensor {
+        name "DS_3"
+        backSlot TinkerbotsDistanceSensor {
+          name "DS_front"
+        }
+      }
+      leftSlot TinkerbotsDistanceSensor {
+        translation -0.04 0 0
+        rotation 0 0 1 0.7853996938995746
+        name "DS_right"
+      }
+      frontSlot TinkerbotsAxle {
+        name "axle_right"
+        endSlot TinkerbotsWheel {
+          name "wheel_right"
+        }
+      }
+    }
     leftSlot TinkerbotsDistanceSensor {
       translation 0.04 -0.005 0
       rotation 0 0 1 1.8325996938995748
@@ -40,24 +61,7 @@ TinkerbotsBase {
     name "finger_left"
   }
   rightSlot TinkerbotsCube {
-    name "cube_right"
-    leftSlot TinkerbotsMotor {
-      rotation 0 0 1 1.5708003061004252
-      name "motor_right"
-      leftSlot TinkerbotsDistanceSensor {
-        translation 0.04 0.005 0
-        rotation 0 0 1 1.3090003061004252
-        name "DS_right"
-      }
-      frontSlot TinkerbotsAxle {
-        name "axle_right"
-        endSlot TinkerbotsWheel {
-          name "wheel_right"
-        }
-      }
-    }
     rightASlot TinkerbotsFinger {
-      name "finger_right"
     }
   }
 }
@@ -71,9 +75,31 @@ Wall {
   size 0.25 0.1 0.02
 }
 Wall {
-  translation -0.235 0 -0.36
+  translation -0.375 0 -0.75
+  name "wall(6)"
+  size 0.25 0.1 0.02
+}
+Wall {
+  translation -0.625 0 -0.49
+  name "wall(7)"
+  size 0.25 0.1 0.02
+}
+Wall {
+  translation -0.255 0 -0.37
+  rotation 0 1 0 1.5708
+  name "wall(4)"
+  size 0.25 0.1 0.02
+}
+Wall {
+  translation -0.255 0 -0.87
   rotation 0 1 0 -1.5707953071795862
   name "wall(2)"
+  size 0.25 0.1 0.02
+}
+Wall {
+  translation -0.255 0 -0.62
+  rotation 0 1 0 -1.5707953071795862
+  name "wall(5)"
   size 0.25 0.1 0.02
 }
 Wall {
