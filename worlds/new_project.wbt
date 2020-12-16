@@ -3,8 +3,8 @@ WorldInfo {
   coordinateSystem "NUE"
 }
 Viewpoint {
-  orientation 0.574302659372223 0.605425762917382 0.5510318511972772 4.256374233096162
-  position -0.2945498469275543 0.801954165830505 -0.4847360031041127
+  orientation 0.5671437282728287 0.5978268545983244 0.5665254128473581 4.209478249629486
+  position -0.19789175597036124 0.6263902930827998 -0.5751094002321318
 }
 DEF ball1 Ball {
   translation 0.03 0.0825 0.36
@@ -34,8 +34,8 @@ TinkerbotsBase {
         }
       }
       leftSlot TinkerbotsDistanceSensor {
-        translation 0.04 0.0045 0
-        rotation 0 0 1 1.3090003061004252
+        translation -0.04 0 0
+        rotation 0 0 1 0.7853996938995746
         name "DS_right"
       }
       frontSlot TinkerbotsAxle {
@@ -85,7 +85,7 @@ Wall {
   size 0.25 0.1 0.02
 }
 Wall {
-  translation -0.485 0 -0.37
+  translation -0.255 0 -0.37
   rotation 0 1 0 1.5708
   name "wall(4)"
   size 0.25 0.1 0.02

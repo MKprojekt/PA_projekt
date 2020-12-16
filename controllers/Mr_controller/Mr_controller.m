@@ -49,6 +49,11 @@ while wb_robot_step(TIME_STEP) ~= -1
   DS_3_value = wb_distance_sensor_get_value(DS_3);
   DS_front_value = wb_distance_sensor_get_value(DS_front);
   
+  %left turn
+  if DS_3_value < 40;
+  turn_left = DS_right_value < 1.4142*(DS_3_value) + 0.0166;
+  end
+  
   %right turn
   turn_right = DS_3_value > 30;
   
@@ -56,11 +61,14 @@ while wb_robot_step(TIME_STEP) ~= -1
   left_motor_speed = speed*0.5;
   right_motor_speed = speed*0.5;
   
-  %change motor speed near obstacle
-  if turn_right
-    left_motor_speed = speed*0.5;
-    right_motor_speed = -speed*0.1;
-  end
+  %change motor speed to follow right walls
+ if turn_left
+    left_motor_speed = -speed*0.2;
+    right_motor_speed = speed*0.5;
+ elseif turn_right
+    left_motor_speed = speed*0.6;
+    right_motor_speed = speed*0.2;    
+ end
   
   %set motor speed
   wb_motor_set_velocity(motor_left, left_motor_speed);
