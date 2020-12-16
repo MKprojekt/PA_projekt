@@ -3,11 +3,11 @@ WorldInfo {
   coordinateSystem "NUE"
 }
 Viewpoint {
-  orientation 0.5044067051067581 0.7125010372684146 0.48776648894197 4.399173101284517
-  position -0.3736248735866599 0.7594316703443142 -0.7295444742826055
+  orientation 0.0021462308105309113 0.7816874052561412 0.6236667332455929 3.1372077998621926
+  position 0.033999415675599984 3.4830704571174103 -0.8892411476704251
 }
 DEF ball1 Ball {
-  translation 0.03 0.0825 0.36
+  translation 0.36 0.0825 0.93
   radius 0.06
 }
 TexturedBackground {
@@ -17,6 +17,7 @@ TexturedBackgroundLight {
 RectangleArena {
   translation 0 0.02 0
   floorSize 2 2
+  wallHeight 0.001
 }
 TinkerbotsBase {
   translation -0.11 0.05 -0.9
@@ -108,45 +109,292 @@ TinkerbotsBase {
   }
 }
 Wall {
-  translation 0.125 0 -0.49
+  translation 0.125 0 -0.25
+  name "X"
   size 0.25 0.1 0.02
 }
 Wall {
-  translation -0.125 0 -0.24
-  name "wall(1)"
+  translation 0.615 0 0
+  name "X(28)"
   size 0.25 0.1 0.02
 }
 Wall {
-  translation -0.375 0 -0.75
-  name "wall(6)"
+  translation -0.375 0 -0.5
+  name "X(4)"
   size 0.25 0.1 0.02
 }
 Wall {
-  translation -0.625 0 -0.49
-  name "wall(7)"
+  translation -0.875 0 -0.5
+  name "X(10)"
   size 0.25 0.1 0.02
 }
 Wall {
-  translation -0.255 0 -0.37
-  rotation 0 1 0 1.5708
-  name "wall(4)"
+  translation -0.625 0 0
+  name "X(11)"
   size 0.25 0.1 0.02
+}
+Wall {
+  translation -0.135 0 0
+  name "X(19)"
+  size 0.25 0.1 0.02
+}
+Wall {
+  translation 0.125 0 0.24
+  name "X(20)"
+  size 0.25 0.1 0.02
+}
+Wall {
+  translation 0.375 0 0.74
+  name "X(7)"
+  size 0.25 0.1 0.02
+}
+Wall {
+  translation 0.875 0 0.5
+  name "X(25)"
+  size 0.25 0.1 0.02
+}
+Wall {
+  translation 0.625 0 0.25
+  name "X(24)"
+  size 0.25 0.1 0.02
+}
+Wall {
+  translation 0.625 0 0.74
+  name "X(23)"
+  size 0.25 0.1 0.02
+}
+Wall {
+  translation 0.745 0 0.99
+  name "X(31)"
+  size 0.5 0.1 0.02
+}
+Wall {
+  translation -0.625 0 0.5
+  name "X(14)"
+  size 0.25 0.1 0.02
+}
+Wall {
+  translation -0.875 0 0.5
+  name "X(15)"
+  size 0.25 0.1 0.02
+}
+Wall {
+  translation -0.375 0 0.99
+  name "X(30)"
+  size 1.25 0.1 0.02
+}
+Wall {
+  translation -0.375 0 0.75
+  name "X(17)"
+  size 0.25 0.1 0.02
+}
+Wall {
+  translation -0.125 0 0.5
+  name "X(18)"
+  size 0.25 0.1 0.02
+}
+Wall {
+  translation -0.875 0 0.25
+  name "X(12)"
+  size 0.25 0.1 0.02
+}
+Wall {
+  translation -0.385 0 0.24
+  name "X(13)"
+  size 0.25 0.1 0.02
+}
+Wall {
+  translation 0.125 0 -0.74
+  name "X(2)"
+  size 0.25 0.1 0.02
+}
+Wall {
+  translation -0.385 0 -0.75
+  name "X(5)"
+  size 0.25 0.1 0.02
+}
+Wall {
+  translation -0.005 0 -1
+  name "X(29)"
+  size 2 0.1 0.02
+}
+Wall {
+  translation -0.875 0 -0.75
+  name "X(9)"
+  size 0.25 0.1 0.02
+}
+Wall {
+  translation 0.375 0 -0.74
+  name "X(3)"
+  size 0.25 0.1 0.02
+}
+Wall {
+  translation 0.375 0 -0.5
+  name "X(21)"
+  size 0.25 0.1 0.02
+}
+Wall {
+  translation 0.625 0 -0.5
+  name "X(22)"
+  size 0.25 0.1 0.02
+}
+Wall {
+  translation 0.875 0 -0.5
+  name "X(16)"
+  size 0.25 0.1 0.02
+}
+Wall {
+  translation -0.125 0 -0.25
+  name "X(1)"
+  size 0.25 0.1 0.02
+}
+Wall {
+  translation -0.495 0 -0.38
+  rotation 0 1 0 1.01503e-06
+  name "Y"
+  size 0.02 0.1 0.25
+}
+Wall {
+  translation -0.745 0 0.62
+  rotation 0 1 0 1.01503e-06
+  name "Y(9)"
+  size 0.02 0.1 0.25
+}
+Wall {
+  translation -0.255 0 0.86
+  rotation 0 1 0 1.01503e-06
+  name "Y(25)"
+  size 0.02 0.1 0.25
+}
+Wall {
+  translation -0.255 0 0.12
+  rotation 0 1 0 1.01503e-06
+  name "Y(13)"
+  size 0.02 0.1 0.25
+}
+Wall {
+  translation -0.505 0 0.12
+  rotation 0 1 0 1.01503e-06
+  name "Y(14)"
+  size 0.02 0.1 0.25
+}
+Wall {
+  translation -1.005 0 5.15213e-15
+  rotation 0 1 0 1.01503e-06
+  name "Y(8)"
+  size 0.02 0.1 2
+}
+Wall {
+  translation 0.995 0 -2.03001e-06
+  rotation 0 1 0 1.01503e-06
+  name "Y(26)"
+  size 0.02 0.1 2
+}
+Wall {
+  translation -0.00499975 0 0.87
+  rotation 0 1 0 1.01503e-06
+  name "Y(10)"
+  size 0.02 0.1 0.25
+}
+Wall {
+  translation -0.255 0 0.62
+  rotation 0 1 0 1.01503e-06
+  name "Y(24)"
+  size 0.02 0.1 0.25
+}
+Wall {
+  translation 0.255 0 0.86
+  rotation 0 1 0 1.01503e-06
+  name "Y(17)"
+  size 0.02 0.1 0.25
+}
+Wall {
+  translation 0.505 0 0.61
+  rotation 0 1 0 1.01503e-06
+  name "Y(18)"
+  size 0.02 0.1 0.25
+}
+Wall {
+  translation 0.505 0 0.37
+  rotation 0 1 0 1.01503e-06
+  name "Y(21)"
+  size 0.02 0.1 0.25
+}
+Wall {
+  translation 0.245 0 0.37
+  rotation 0 1 0 1.01503e-06
+  name "Y(3)"
+  size 0.02 0.1 0.25
+}
+Wall {
+  translation 0.745 0 -0.12
+  rotation 0 1 0 1.01503e-06
+  name "Y(22)"
+  size 0.02 0.1 0.25
+}
+Wall {
+  translation -0.0050002 0 0.12
+  rotation 0 1 0 1.01503e-06
+  name "Y(12)"
+  size 0.02 0.1 0.25
+}
+Wall {
+  translation 0.244999 0 -0.13
+  rotation 0 1 0 1.01503e-06
+  name "Y(23)"
+  size 0.02 0.1 0.25
+}
+Wall {
+  translation 0.745 0 0.13
+  rotation 0 1 0 1.01503e-06
+  name "Y(15)"
+  size 0.02 0.1 0.25
+}
+Wall {
+  translation -0.755 0 -0.63
+  rotation 0 1 0 1.01503e-06
+  name "Y(6)"
+  size 0.02 0.1 0.25
 }
 Wall {
   translation -0.255 0 -0.87
-  rotation 0 1 0 -1.5707953071795862
-  name "wall(2)"
-  size 0.25 0.1 0.02
+  rotation 0 1 0 1.01503e-06
+  name "Y(1)"
+  size 0.02 0.1 0.25
+}
+Wall {
+  translation 0.0050005 0 -0.37
+  rotation 0 1 0 1.01503e-06
+  name "Y(4)"
+  size 0.02 0.1 0.25
+}
+Wall {
+  translation 0.00500025 0 -0.62
+  rotation 0 1 0 1.01503e-06
+  name "Y(27)"
+  size 0.02 0.1 0.25
+}
+Wall {
+  translation 0.505 0 -0.38
+  rotation 0 1 0 1.01503e-06
+  name "Y(7)"
+  size 0.02 0.1 0.25
+}
+Wall {
+  translation 0.255 0 -0.62
+  rotation 0 1 0 1.01503e-06
+  name "Y(5)"
+  size 0.02 0.1 0.25
+}
+Wall {
+  translation 0.755 0 -0.62
+  rotation 0 1 0 1.01503e-06
+  name "Y(11)"
+  size 0.02 0.1 0.25
 }
 Wall {
   translation -0.255 0 -0.62
-  rotation 0 1 0 -1.5707953071795862
-  name "wall(5)"
-  size 0.25 0.1 0.02
-}
-Wall {
-  translation 0.235 0 -0.36
-  rotation 0 1 0 -1.5707953071795862
-  name "wall(3)"
-  size 0.25 0.1 0.02
+  rotation 0 1 0 1.01503e-06
+  name "Y(2)"
+  size 0.02 0.1 0.25
 }
