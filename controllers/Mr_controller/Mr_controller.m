@@ -12,7 +12,7 @@
 
 TIME_STEP = 64;
 
-speed = 6;
+speed = 4;
 
 % get and enable devices, e.g.:
 %  camera = wb_robot_get_device('camera');
@@ -28,10 +28,12 @@ wb_motor_set_velocity(motor_left, 0);
 wb_motor_set_velocity(motor_right, 0);
 
 %initialize distance sensors
-DS_left = wb_robot_get_device('DS_left');
 DS_right = wb_robot_get_device('DS_right');
-wb_distance_sensor_enable(DS_left,TIME_STEP);
+DS_up = wb_robot_get_device('DS_up');
+DS_front = wb_robot_get_device('DS_front');
 wb_distance_sensor_enable(DS_right,TIME_STEP);
+wb_distance_sensor_enable(DS_up,TIME_STEP);
+wb_distance_sensor_enable(DS_front,TIME_STEP);
 
 % main loop:
 % perform simulation steps of TIME_STEP milliseconds
@@ -40,25 +42,30 @@ wb_distance_sensor_enable(DS_right,TIME_STEP);
 while wb_robot_step(TIME_STEP) ~= -1
 
   % read the sensors
-  DS_left_value = wb_distance_sensor_get_value(DS_left);
   DS_right_value = wb_distance_sensor_get_value(DS_right);
+  DS_up_value = wb_distance_sensor_get_value(DS_up);
+  DS_front_value = wb_distance_sensor_get_value(DS_front);
   
-  %detect obstacle
-  obstacle_left = DS_left_value < 35;
-  obstacle_right = DS_right_value < 35;
+  %left turn
+  if DS_right_value < 40;
+  turn_left = DS_up_value < (1.4142*(DS_right_value) + 0.045) | DS_front_value < 30 | DS_right_value < 20;
+  end
+  
+  %right turn
+  turn_right = DS_right_value > 25;
   
   %set motor speed
   left_motor_speed = speed*0.5;
   right_motor_speed = speed*0.5;
   
-  %change motor speed near obstacle
-  if obstacle_left
-    left_motor_speed = speed*0.5;
-    right_motor_speed = -speed*0.5;
-  elseif obstacle_right
-    left_motor_speed = -speed*0.5;
-    right_motor_speed = speed*0.5;
-  end
+  %change motor speed to follow right walls
+ if turn_left
+    left_motor_speed = -speed*0.3;
+    right_motor_speed = speed*0.7;
+ elseif turn_right
+    left_motor_speed = speed*0.7;
+    right_motor_speed = speed*0.2;    
+ end
   
   %set motor speed
   wb_motor_set_velocity(motor_left, left_motor_speed);
