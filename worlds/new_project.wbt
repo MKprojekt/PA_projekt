@@ -3,8 +3,8 @@ WorldInfo {
   coordinateSystem "NUE"
 }
 Viewpoint {
-  orientation 0.5522504678851193 0.6203026815584385 0.5569955152172028 4.233473762770593
-  position -0.21125056206123632 0.8000653062897216 -0.6236647287782707
+  orientation 0.5044067051067581 0.7125010372684146 0.48776648894197 4.399173101284517
+  position -0.3736248735866599 0.7594316703443142 -0.7295444742826055
 }
 DEF ball1 Ball {
   translation 0.03 0.0825 0.36
@@ -28,15 +28,55 @@ TinkerbotsBase {
       translation 0 0.04 -0.04
       name "motor_right"
       upSlot TinkerbotsDistanceSensor {
-        name "DS_3"
+        name "DS_right"
         backSlot TinkerbotsDistanceSensor {
           name "DS_front"
         }
       }
       leftSlot TinkerbotsDistanceSensor {
-        translation -0.04 0 0
-        rotation 0 0 1 0.7853996938995746
-        name "DS_right"
+        translation -0.02 -0.02 0
+        rotation 0 0 1 0.7853993061004253
+        name "DS_up"
+        leftASlot TinkerbotsCubieTriangle {
+          rotation 0 0 1 1.5707996938995747
+          name "triangle cubie1"
+          color "blue"
+        }
+        leftBSlot TinkerbotsCubieTriangle {
+          rotation 0 0 1 -3.141592653589793
+          name "triangle cubie2"
+          color "blue"
+        }
+        leftCSlot TinkerbotsCubieTriangle {
+          rotation 0 0 1 1.5707996938995747
+          name "triangle cubie3"
+          color "blue"
+        }
+        leftDSlot TinkerbotsCubieTriangle {
+          rotation 0 0 1 3.141592653589793
+          name "triangle cubie4"
+          color "blue"
+        }
+        backASlot TinkerbotsCubieTriangle {
+          rotation 0 0 1 1.5708003061004252
+          name "triangle cubie5"
+          color "blue"
+        }
+        backBSlot TinkerbotsCubieTriangle {
+          rotation 0 0 1 3.141592653589793
+          name "triangle cubie6"
+          color "blue"
+        }
+        backCSlot TinkerbotsCubieTriangle {
+          rotation 0 0 1 1.5707996938995747
+          name "triangle cubie7"
+          color "blue"
+        }
+        backDSlot TinkerbotsCubieTriangle {
+          rotation 0 0 1 -3.141592653589793
+          name "triangle cubie8"
+          color "blue"
+        }
       }
       frontSlot TinkerbotsAxle {
         name "axle_right"
@@ -45,23 +85,25 @@ TinkerbotsBase {
         }
       }
     }
-    leftSlot TinkerbotsDistanceSensor {
-      translation 0.04 -0.005 0
-      rotation 0 0 1 1.8325996938995748
-      name "DS_left"
-    }
     backSlot TinkerbotsAxle {
       name "axle_left"
       endSlot DEF wheel_left TinkerbotsWheel {
       }
     }
   }
-  downCSlot TinkerbotsFinger {
-    rotation 0 0 1 1.5708003061004252
-    name "finger_left"
+  downBSlot TinkerbotsFinger {
+  }
+  downDSlot TinkerbotsCubieTriangle {
+    rotation 0 0 1 3.141592653589793
+    color "blue"
   }
   rightSlot TinkerbotsCube {
-    rightASlot TinkerbotsFinger {
+    rightBSlot TinkerbotsFinger {
+      rotation 0 0 1 1.5707996938995747
+    }
+    rightDSlot TinkerbotsCubieTriangle {
+      rotation 0 0 1 1.5708003061004252
+      color "blue"
     }
   }
 }
