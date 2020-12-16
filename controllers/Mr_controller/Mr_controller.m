@@ -41,7 +41,7 @@ wb_distance_sensor_enable(DS_front,TIME_STEP);
 %
 while wb_robot_step(TIME_STEP) ~= -1
 
-  % read the sensors
+  % read sensors
   DS_right_value = wb_distance_sensor_get_value(DS_right);
   DS_up_value = wb_distance_sensor_get_value(DS_up);
   DS_front_value = wb_distance_sensor_get_value(DS_front);
