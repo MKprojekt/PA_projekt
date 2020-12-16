@@ -12,7 +12,7 @@
 
 TIME_STEP = 64;
 
-speed = 4;
+speed = 6;
 
 % get and enable devices, e.g.:
 %  camera = wb_robot_get_device('camera');
@@ -51,11 +51,11 @@ while wb_robot_step(TIME_STEP) ~= -1
   
   %left turn
   if DS_3_value < 40;
-  turn_left = DS_right_value < 1.4142*(DS_3_value) + 0.0166;
+  turn_left = DS_right_value < 1.4142*(DS_3_value) | DS_front_value < 30 | DS_3_value < 20;
   end
   
   %right turn
-  turn_right = DS_3_value > 30;
+  turn_right = DS_3_value > 25;
   
   %set motor speed
   left_motor_speed = speed*0.5;
@@ -63,10 +63,10 @@ while wb_robot_step(TIME_STEP) ~= -1
   
   %change motor speed to follow right walls
  if turn_left
-    left_motor_speed = -speed*0.2;
-    right_motor_speed = speed*0.5;
+    left_motor_speed = -speed*0.4;
+    right_motor_speed = speed*0.7;
  elseif turn_right
-    left_motor_speed = speed*0.6;
+    left_motor_speed = speed*0.7;
     right_motor_speed = speed*0.2;    
  end
   

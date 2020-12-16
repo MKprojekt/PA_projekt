@@ -3,8 +3,8 @@ WorldInfo {
   coordinateSystem "NUE"
 }
 Viewpoint {
-  orientation 0.5671437282728287 0.5978268545983244 0.5665254128473581 4.209478249629486
-  position -0.19789175597036124 0.6263902930827998 -0.5751094002321318
+  orientation 0.5522504678851193 0.6203026815584385 0.5569955152172028 4.233473762770593
+  position -0.21125056206123632 0.8000653062897216 -0.6236647287782707
 }
 DEF ball1 Ball {
   translation 0.03 0.0825 0.36
@@ -19,7 +19,7 @@ RectangleArena {
   floorSize 2 2
 }
 TinkerbotsBase {
-  translation -0.12 0.05 -0.7
+  translation -0.11 0.05 -0.9
   controller "Mr_controller"
   upSlot TinkerbotsMotor {
     rotation 0 0 1 1.5708003061004252
@@ -75,7 +75,7 @@ Wall {
   size 0.25 0.1 0.02
 }
 Wall {
-  translation -0.375 0 -0.49
+  translation -0.375 0 -0.75
   name "wall(6)"
   size 0.25 0.1 0.02
 }
